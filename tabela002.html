@@ -12,6 +12,14 @@
         table{
             width: 500px;
             border-collapse: collapse;
+            position: relative;
+        }
+
+        caption{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: grey;
         }
 
         td, th{
@@ -25,6 +33,16 @@
             text-align: center;
         }
 
+        thead > tr > th{
+            position: sticky;
+            top: -1px;
+            background-color: gray;
+        }
+
+        tbody > tr:nth-child(even) {
+            background-color: lightslategray;
+        }
+
         td.num{
             text-align: right;
         }
@@ -34,13 +52,19 @@
     <h1>Uso de tabelas grandes</h1>
 
     <table>
-        <thead>
-            <tr>
-                <th>Estado</th>
-                <th>População</th>
-            </tr>
-        </thead>
+        
         <tbody>
+           
+    
+             <caption>População Das Uidades Federativas</caption>
+            
+        
+            <thead>
+                <tr>
+                    <th scope="col">Estado</th>
+                    <th scope="col" style="width: 50px;">População</th>
+                </tr>
+            </thead>
             <tr>
                 <td>São Paulo</td>
                 <td class="num">44 420 459</td>
@@ -152,8 +176,8 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
-                <td class="num"><strong>214,3</strong> Milhões Aproximadamente</td>
+                <th scope="row">Total de Habitantes</th>
+                <td class="num"><strong>214,3</strong> Milhões </td>
             </tr>
         </tfoot>
     </table>
